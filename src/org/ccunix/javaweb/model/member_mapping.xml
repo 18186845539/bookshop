@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.ccunix.javaweb.model">
+
+	<class name="MemberModel" table="member">
+		<id name="id" column="id" type="int">
+		    <generator class="increment"/>
+		</id>
+
+		<property name="memberName" column="memberName" type="string"></property>
+		<property name="loginName" column="loginName" type="string"></property>
+		<property name="loginPwd" column="loginPwd" type="string"></property>
+		<property name="phone" column="phone" type="string"></property>
+		<property name="address" column="address" type="string"></property>
+		<property name="zip" column="zip" type="string"></property>
+		<property name="regDate" column="regDate" type="string"></property>
+		<property name="lastDate" column="lastDate" type="string"></property>
+		<property name="loginTimes" column="loginTimes" type="int"  not-null="false"></property>
+		<property name="email" column="email" type="string"></property>
+
+		<many-to-one name="levelModel" column="memberLevel" class="MemberLevelModel"
+			insert="false" update="false">
+		</many-to-one>
+		<!-- 1:m 1个会员对应多个订单 -->
+		<set name="ordersSet" order-by="id">
+		   <key column="member"></key>
+		   <one-to-many class="OrderModel"/>
+		</set>
+
+	</class>
+
+</hibernate-mapping>

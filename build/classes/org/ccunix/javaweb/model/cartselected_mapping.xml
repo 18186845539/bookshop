@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.ccunix.javaweb.model">
+
+	<class name="CartSelectedMerModel" table="cartselectedmer">
+		<id name="id" column="id" type="int">
+		    <generator class="increment"/>
+		</id>
+		<property name="cart" column="cart" type="int"></property>
+		<property name="number" column="number" type="int"></property>
+		<property name="price" column="price" type="double"></property>
+		<property name="money" column="money" type="double"></property>
+		<!-- 对应1个商品信息表 -->
+		<many-to-one name="merchandiseModel"  column="merchandise"
+          not-null="false" class="MerchandiseModel"/>
+	</class>
+
+</hibernate-mapping>

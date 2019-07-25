@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<title>Insert title here</title>
+<script type="text/javascript">
+	$(document).ready(
+			function() {
+				$("#submitAB").click(function() {
+					var user = new Object();
+					user.username=$("#username").val();
+					user.password=$("#password").val();
+					alert(user);
+					
+					$.ajax({
+						url : "http://localhost:8080/jquery20180910-1/jQueryAjaxJsonServlet",
+						type : "POST",
+						datatype : "json",
+						async: false,
+						data :user,
+						success : function(data) {
+							var obj = JSON.parse(data);
+							
+							 $.each(obj, function (index, item){
+								 alert(item.name+"   "+obj[index].name);
+							 });
+							
+						},
+						error : function() {
+							alert("提交失败！");
+						}
+					});
+				});
+			}
+);
+</script>
+</head>
+<body>
+<input id="username" type="text" name="username">
+<input id="password" type="text" name="password">
+<button id="submitAB">提交</button>
+</body>
+</html>

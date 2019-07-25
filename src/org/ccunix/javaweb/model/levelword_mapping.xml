@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.ccunix.javaweb.model">
+
+	<class name="LeaveWordModel" table="leaveword">
+		<id name="id" column="id" type="int">
+		    <generator class="increment"/>
+		</id>
+		<property name="admin" column="admin" type="int"></property>
+		<property name="title" column="title" type="string"></property>
+		<property name="content" column="content" type="string"></property>
+		<property name="leaveDate" column="leaveDate" type="string"></property>
+		<property name="answerContent" column="answerContent" type="string"></property>
+		<property name="answerDate" column="answerDate" type="string"></property>
+		
+	    <!-- n:1 多对一  一个购物车只属于一个会员 -->
+		<many-to-one name="memberModel" column="memberModel" class="MemberModel">
+		</many-to-one>
+	
+	</class>
+
+</hibernate-mapping>

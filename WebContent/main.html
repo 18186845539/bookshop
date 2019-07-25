@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>欢迎使用电子商城系统</title>
+<link type="text/css" rel="stylesheet" href="css/Demo.css">
+</head>
+<script type="text/javascript">
+function isNull(field, id) {
+	var value = field.value;
+	if (value == null || value == "") {
+		document.getElementById(id).innerHTML = "空值";
+		document.getElementById(id).style.color = "red";
+		return false;
+	} else {
+		document.getElementById(id).innerHTML = "";
+		return true;
+	}
+}
+function validate_form(thisform) {
+	if (isNull(document.getElementById("Username"), 'errorUsername') == false
+			| isNull(document.getElementById("Password"), 'errorPassword') == false) {
+		return false;
+	}
+}
+	function change() {
+		var parent=document.getElementById("parent");
+		var child=document.getElementById("child");
+		parent.removeChild(child);
+		document.getElementById("parent").innerHTML("您已经成功登陆.您的级别为普通会员。");
+	}
+
+</script>
+<body>
+	<div class="container">
+		<div class="head">
+			<img alt="" src="img/s.png">
+			<div class="div1">
+				<table>
+					<tr>
+						<td><input id="qKey" name="qKey" value="商品关键字"></td>
+						<td><select id="category">
+								<option value="0">所有商品</option>
+								<option value="1">计算机类</option>
+								<option value="2">管理类</option>
+								<option value="3">英语类</option>
+								<option value="4">小说类</option>
+								<option value="5">玄幻类</option>
+						</select></td>
+						<td><button class="bu1"></button></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="menu">
+			<img alt="" src="img/icon02.gif" class="img1">
+			<div class="test">
+				<ol>
+					<li class="nav"><a href="main.html" class="nn">商城首页</a></li>
+					<li class="nav"><a href="GouWuCar.html" class="nn">购物车管理</a></li>
+					<li class="nav"><a href="orderManager.html" class="nn">订单管理</a></li>
+					<li class="nav"><a href="message.html" class="nn">顾客留言</a></li>
+					<li class="nav"><a href="changeZiLiao.html" class="nn">修改注册资料</a></li>
+				</ol>
+			</div>
+			<img alt="" src="img/icon07.gif" class="img2">
+		</div>
+		<div class="center">
+			<div class="zuo">
+				<div class="zuo1">
+					<div id="zuo001"
+						style="width: 85%; height: 30px; background-image: url('img/icon06.gif');">
+						<form action="" onsubmit="return validate_form(this)">
+							<p class="pp">会员登陆</p>
+							<div id="parent">
+							<div id="child">
+							<span class="ppp" style="font-size: 5px;">登陆帐号：</span><input
+								type="text" class="in1" id="Username" onblur="isNull(this,'errorUsername')"><span
+								id="errorUsername" style="font-size: 1px;"></span><br>
+							<span style="font-size: 5px;">登陆密码：</span><input type="password"
+								class="in2" id="Password" onblur="isNull(this,'errorPassword')"><span
+								id="errorPassword"  style="font-size: 1px;"></span><br><input
+								type="button" class="bb1" value="注册"> <input
+								type="submit" class="bb11" value="登陆" onclick="change()">
+								</div>
+								</div>
+						</form>
+					</div>
+				</div>
+				<div class="zuo2">
+					<div id="zuo001"
+						style="width: 85%; height: 30px; background-image: url('img/icon01.gif');">
+						<p class="pp">商品类别</p>
+						<ul>
+							<li class="back"><a href="gengDuo1.html" class="aa">计算机类</a></li>
+							<li class="back"><a href="gengDuo1.html" class="aa">管理类</a></li>
+							<li class="back"><a href="gengDuo1.html" class="aa">英语类</a></li>
+							<li class="back"><a href="gengDuo1.html" class="aa">小说类</a></li>
+							<li class="back"><a href="gengDuo1.html" class="aa">玄幻类</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="you">
+				<div class="you1">
+					<div class="div4">
+						<img src="img/Icon_TeJia.gif"> <a href="gengDuo1.html"
+							class="b3"><img src="img/icon_more.gif"></a>
+					</div>
+					<div class="div5"></div>
+					<div class="div6">
+						<center>
+							<a href="详情1.html"><img alt="" src="img/b1.png"
+								style="text-align: center; border: 3px;"></a>
+						</center>
+						<br>
+						<p style="text-align: center; font-size: 6px;">
+							<a href="#" class="a1"
+								style="text-decoration: none; color: blue;">管理是什么</a>
+						</p>
+						<p style="text-align: center; color: black;">市场价： ￥56.0</p>
+						<p style="text-align: center; color: black;">特 价： ￥50.0</p>
+						<a href="详情1.html" class="bb2"><img alt=""
+							src="img/icon_car.gif"></a> <a href="GouWuCar.html" class="bb3"><img
+							alt="" src="img/icon_buy.gif"></a>
+					</div>
+					<div class="div6">
+						<center>
+							<a href="详情2.html"><img alt="" src="img/b2.png"
+								style="text-align: center; border: 3px;"></a>
+						</center>
+						<br>
+						<p style="text-align: center; font-size: 6px;">
+							<a href="#" class="a1"
+								style="text-decoration: none; color: blue;">贫民窟的百万富翁</a>
+						</p>
+						<p style="text-align: center; color: black;">市场价： ￥66.0</p>
+						<p style="text-align: center; color: black;">特 价： ￥45.0</p>
+						<a href="详情2.html" class="bb2"><img alt=""
+							src="img/icon_car.gif"></a> <a href="GouWuCar.html" class="bb3"><img
+							alt="" src="img/icon_buy.gif"></a>
+					</div>
+					<div class="div6">
+						<center>
+							<a href="详情3.html"><img alt="" src="img/b3.png"
+								style="text-align: center; border: 3px;"></a>
+						</center>
+						<br>
+						<p style="text-align: center; font-size: 6px;">
+							<a href="#" class="a1"
+								style="text-decoration: none; color: blue;">货币战争</a>
+						</p>
+						<p style="text-align: center; color: black;">市场价： ￥56.0</p>
+						<p style="text-align: center; color: black;">特 价： ￥45.0</p>
+						<a href="详情3.html" class="bb2"><img alt=""
+							src="img/icon_car.gif"></a> <a href="GouWuCar.html" class="bb3"><img
+							alt="" src="img/icon_buy.gif"></a>
+					</div>
+
+				</div>
+				<div class="you2">
+					<div class="div4">
+						<img src="img/NewGoods_03.gif"> <a href="gengDuo2.html"
+							class="b3"><img src="img/icon_more.gif"></a>
+					</div>
+					<div class="div5"></div>
+					<div class="div6">
+						<center>
+							<a href="详情4.html"><img alt="" src="img/b4.png"
+								style="text-align: center; border: 3px;"></a>
+						</center>
+						<br>
+						<p style="text-align: center; font-size: 6px;">
+							<a href="#" class="a1"
+								style="text-decoration: none; color: blue;">领导力是什么</a>
+						</p>
+						<p style="text-align: center; color: black;">市场价： ￥56.0</p>
+						<p style="text-align: center; color: black;">特 价： ￥50.0</p>
+						<a href="详情4.html" class="bb2"><img alt=""
+							src="img/icon_car.gif"></a> <a href="GouWuCar.html" class="bb3"><img
+							alt="" src="img/icon_buy.gif"></a>
+					</div>
+					<div class="div6">
+						<center>
+							<a href="详情5.html"><img alt="" src="img/b5.png"
+								style="text-align: center; border: 3px;"></a>
+						</center>
+						<br>
+						<p style="text-align: center; font-size: 6px;">
+							<a href="#" class="a1"
+								style="text-decoration: none; color: blue;">士兵突击</a>
+						</p>
+						<p style="text-align: center; color: black;">市场价： ￥66.0</p>
+						<p style="text-align: center; color: black;">特 价： ￥45.0</p>
+						<a href="详情5.html" class="bb2"><img alt=""
+							src="img/icon_car.gif"></a> <a href="GouWuCar.html" class="bb3"><img
+							alt="" src="img/icon_buy.gif"></a>
+					</div>
+					<div class="div6">
+						<center>
+							<a href="详情6.html"><img alt="" src="img/b6.png"
+								style="text-align: center; border: 0px;"></a>
+						</center>
+						<br>
+						<p style="text-align: center; font-size: 6px;">
+							<a href="#" class="a1"
+								style="text-decoration: none; color: blue;">巴菲特教你读财报</a>
+						</p>
+						<p style="text-align: center; color: black;">市场价： ￥56.0</p>
+						<p style="text-align: center; color: black;">特 价： ￥45.0</p>
+						<a href="详情6.html" class="bb2"><img alt=""
+							src="img/icon_car.gif"></a> <a href="GouWuCar.html" class="bb3"><img
+							alt="" src="img/icon_buy.gif"></a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<p>版权所有：长春优尼克斯软件有限公司  编写者：于洋</p>
+		</div>
+	</div>
+</body>
+</html>

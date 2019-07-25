@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.ccunix.javaweb.model">
+
+	<class name="MerchandiseModel" table="merchandise">
+		<id name="id" column="id" type="int">
+		    <generator class="increment"/>
+		</id>
+		<property name="mername" column="mername" type="string"></property>
+		<property name="price" column="price" type="double"></property>
+		<property name="sprice" column="sprice" type="double"></property>
+		<property name="picture" column="picture" type="string"></property>
+		<property name="merdesc" column="merdesc" type="string"></property>
+		<property name="manufacturer" column="manufacturer" type="string"></property>
+		<property name="mermodel" column="mermodel" type="string"></property>
+		<property name="leavefactorydate" column="leavefactorydate" type="string"></property>
+		<property name="special" column="special" type="int"></property>
+		
+		<many-to-one name="categoryModel" column="category" class="CategoryModel"></many-to-one>
+	  
+
+	</class>
+
+</hibernate-mapping>
